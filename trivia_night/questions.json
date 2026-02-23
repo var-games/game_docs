@@ -1853,7 +1853,7 @@
           "number": 84,
           "question": "What does NATO stand for?",
           "answer": "North Atlantic Treaty Organization",
-          "facts": "This is a comprehensive answer appearing in history questions."
+          "facts": ""
         },
         {
           "number": 85,
@@ -1978,7 +1978,7 @@
           "number": 4,
           "question": "Which country won the first World Cup in 1930?",
           "answer": "Uruguay",
-          "facts": "Uruguay is a notable geographical location in Sports."
+          "facts": ""
         },
         {
           "number": 5,
@@ -2164,7 +2164,7 @@
           "number": 35,
           "question": "What is a hole-in-one in golf?",
           "answer": "Shooting the ball in one stroke",
-          "facts": "This is a comprehensive answer appearing in sports questions."
+          "facts": ""
         },
         {
           "number": 36,
@@ -2272,7 +2272,7 @@
           "number": 53,
           "question": "What is a slam dunk?",
           "answer": "Basket scored by slamming ball",
-          "facts": "This is a comprehensive answer appearing in sports questions."
+          "facts": ""
         },
         {
           "number": 54,
@@ -2566,13 +2566,13 @@
           "number": 102,
           "question": "Which country has the most FIFA World Cup wins?",
           "answer": "Brazil",
-          "facts": "Brazil is a notable geographical location in Sports."
+          "facts": ""
         },
         {
           "number": 103,
           "question": "Which country invented football?",
           "answer": "England",
-          "facts": "England is a notable geographical location in Sports."
+          "facts": ""
         }
       ]
     },
@@ -2583,7 +2583,7 @@
           "number": 1,
           "question": "What city does Batman live in?",
           "answer": "Gotham City",
-          "facts": "Gotham City is a notable geographical location in Entertainment & Movies."
+          "facts": ""
         },
         {
           "number": 2,
@@ -2655,7 +2655,7 @@
           "number": 13,
           "question": "What is the country in Black Panther?",
           "answer": "Wakanda",
-          "facts": "Wakanda is a notable geographical location in Entertainment & Movies."
+          "facts": ""
         },
         {
           "number": 14,
@@ -3171,13 +3171,13 @@
           "number": 99,
           "question": "What is The Crown spin-off called?",
           "answer": "The Crown: Tales from the Palace",
-          "facts": "This is a comprehensive answer appearing in entertainment & movies questions."
+          "facts": ""
         },
         {
           "number": 100,
           "question": "What was the first Disney animated film?",
           "answer": "Snow White and the Seven Dwarfs",
-          "facts": "This is a comprehensive answer appearing in entertainment & movies questions."
+          "facts": ""
         }
       ]
     },
@@ -3218,7 +3218,7 @@
           "number": 6,
           "question": "What country has Machu Picchu?",
           "answer": "Peru",
-          "facts": "Peru is a notable geographical location in Geography."
+          "facts": ""
         },
         {
           "number": 7,
@@ -3284,7 +3284,7 @@
           "number": 17,
           "question": "What country exports the most coffee?",
           "answer": "Brazil",
-          "facts": "Brazil is a notable geographical location in Geography."
+          "facts": ""
         },
         {
           "number": 18,
@@ -3308,7 +3308,7 @@
           "number": 21,
           "question": "What country has the most islands?",
           "answer": "Sweden",
-          "facts": "Sweden is a notable geographical location in Geography."
+          "facts": ""
         },
         {
           "number": 22,
@@ -3667,7 +3667,7 @@
           "number": 30,
           "question": "Who wrote Treasure Island?",
           "answer": "Robert Louis Stevenson",
-          "facts": "Robert Louis Stevenson is a notable geographical location in Literature & Books."
+          "facts": ""
         },
         {
           "number": 31,
@@ -4145,7 +4145,7 @@
           "number": 8,
           "question": "Who founded Apple?",
           "answer": "Steve Jobs, Steve Wozniak, Ronald Wayne",
-          "facts": "This is a comprehensive answer appearing in technology & computing questions."
+          "facts": ""
         },
         {
           "number": 9,
@@ -4289,7 +4289,7 @@
           "number": 32,
           "question": "What does API stand for?",
           "answer": "Application Programming Interface",
-          "facts": "This is a comprehensive answer appearing in technology & computing questions."
+          "facts": ""
         },
         {
           "number": 33,
@@ -4343,7 +4343,7 @@
           "number": 41,
           "question": "What does HTTPS stand for?",
           "answer": "HyperText Transfer Protocol Secure",
-          "facts": "This is a comprehensive answer appearing in technology & computing questions."
+          "facts": ""
         },
         {
           "number": 42,
@@ -4379,13 +4379,13 @@
           "number": 47,
           "question": "What does IMAP stand for?",
           "answer": "Internet Message Access Protocol",
-          "facts": "This is a comprehensive answer appearing in technology & computing questions."
+          "facts": ""
         },
         {
           "number": 48,
           "question": "What does DHCP stand for?",
           "answer": "Dynamic Host Configuration Protocol",
-          "facts": "This is a comprehensive answer appearing in technology & computing questions."
+          "facts": ""
         },
         {
           "number": 49,
@@ -5277,7 +5277,7 @@
           "number": 95,
           "question": "What is the loudest animal in the ocean?",
           "answer": "Sperm Whale",
-          "facts": "Sperm Whale is a notable geographical location in Nature & Animals."
+          "facts": ""
         },
         {
           "number": 96,
@@ -5641,7 +5641,7 @@
           "number": 4,
           "question": "Which country produces the most chocolate?",
           "answer": "Côte d'Ivoire",
-          "facts": "Côte d'Ivoire is a notable geographical location in Food & Cooking."
+          "facts": ""
         },
         {
           "number": 5,
@@ -5755,7 +5755,7 @@
           "number": 23,
           "question": "Which country produces the most coffee?",
           "answer": "Brazil",
-          "facts": "Brazil is a notable geographical location in Food & Cooking."
+          "facts": ""
         },
         {
           "number": 24,
@@ -6664,7 +6664,7 @@
           "number": 22,
           "question": "What is the legendary lake?",
           "answer": "Lake Avalon",
-          "facts": "Lake Avalon is a notable geographical location in Mythology & Folklore."
+          "facts": ""
         },
         {
           "number": 23,
@@ -6939,7 +6939,7 @@
           "number": 17,
           "question": "What is the international court?",
           "answer": "International Court of Justice",
-          "facts": "This is a comprehensive answer appearing in politics & government questions."
+          "facts": ""
         },
         {
           "number": 18,
@@ -7238,7 +7238,7 @@
           "number": 16,
           "question": "What is the World Bank?",
           "answer": "International lending organization",
-          "facts": "This is a comprehensive answer appearing in economics & finance questions."
+          "facts": ""
         },
         {
           "number": 17,
@@ -7992,7 +7992,7 @@
           "number": 40,
           "question": "What is a light year?",
           "answer": "Distance light travels in year",
-          "facts": "This is a comprehensive answer appearing in astronomy & space questions."
+          "facts": ""
         },
         {
           "number": 41,
@@ -8196,7 +8196,7 @@
           "number": 74,
           "question": "What is SETI?",
           "answer": "Search for Extraterrestrial Intelligence",
-          "facts": "This is a comprehensive answer appearing in astronomy & space questions."
+          "facts": ""
         },
         {
           "number": 75,
@@ -8232,7 +8232,7 @@
           "number": 80,
           "question": "What causes the moon's phases?",
           "answer": "Moon's position relative to sun",
-          "facts": "This is a comprehensive answer appearing in astronomy & space questions."
+          "facts": ""
         },
         {
           "number": 81,
@@ -8340,7 +8340,7 @@
           "number": 98,
           "question": "What is the asteroid belt?",
           "answer": "Object region between Mars and Jupiter",
-          "facts": "This is a comprehensive answer appearing in astronomy & space questions."
+          "facts": ""
         },
         {
           "number": 99,
@@ -8352,7 +8352,7 @@
           "number": 100,
           "question": "What is the Great Attractor?",
           "answer": "Gravitational anomaly in space",
-          "facts": "This is a comprehensive answer appearing in astronomy & space questions."
+          "facts": ""
         }
       ]
     },
@@ -8363,7 +8363,7 @@
           "number": 1,
           "question": "What are the three types of rocks?",
           "answer": "Igneous, sedimentary, metamorphic",
-          "facts": "This is a comprehensive answer appearing in geology & earth science questions."
+          "facts": ""
         },
         {
           "number": 2,
@@ -9643,7 +9643,7 @@
           "number": 11,
           "question": "In which city is the Taj Mahal located?",
           "answer": "Agra",
-          "facts": "Agra is a notable geographical location in Indian History."
+          "facts": ""
         },
         {
           "number": 12,
@@ -9739,7 +9739,7 @@
           "number": 27,
           "question": "What is 'moksha' in Hindu and related Indian philosophies?",
           "answer": "Liberation from the cycle of rebirth",
-          "facts": "This is a comprehensive answer appearing in indian history questions."
+          "facts": ""
         },
         {
           "number": 28,
@@ -9805,7 +9805,7 @@
           "number": 38,
           "question": "Which sport is followed passionately across India and often seen as the country's most popular?",
           "answer": "Cricket",
-          "facts": "Cricket is a notable geographical location in Indian History."
+          "facts": ""
         },
         {
           "number": 39,
@@ -9829,7 +9829,7 @@
           "number": 42,
           "question": "What was the Charkha used to symbolize during the independence movement?",
           "answer": "Self-reliance and the Swadeshi movement",
-          "facts": "This is a comprehensive answer appearing in indian history questions."
+          "facts": ""
         },
         {
           "number": 43,
@@ -9888,7 +9888,7 @@
           "number": 1,
           "question": "Which ancient port on the Malabar Coast was central to spice trade with Rome?",
           "answer": "Muziris (near modern Kodungallur)",
-          "facts": "This is a comprehensive answer appearing in south indian history questions."
+          "facts": ""
         },
         {
           "number": 2,
@@ -10084,15 +10084,15 @@
         },
         {
           "number": 34,
-          "question": "Which South Indian capital city became a major IT hub in the late 20th century?",
+          "question": "Which South Indian city was founded by the feudal chief Kempe Gowda in the 16th century?",
           "answer": "Bengaluru (Bangalore)",
-          "facts": "Bengaluru (Bangalore) represents an important historical time period in South Indian History."
+          "facts": ""
         },
         {
           "number": 35,
           "question": "Which famous hill station near Mysore served as a summer capital for the Wodeyars?",
-          "answer": "Nandi Hills or Ooty (choice: Ooty)",
-          "facts": "This is a comprehensive answer appearing in south indian history questions."
+          "answer": "Ooty",
+          "facts": ""
         },
         {
           "number": 36,
@@ -10146,7 +10146,7 @@
           "number": 44,
           "question": "Which fort in Karnataka is associated with the Vijayanagara and later Deccan history?",
           "answer": "Golconda or Hampi (acceptable: Hampi for Vijayanagara)",
-          "facts": "This is a comprehensive answer appearing in south indian history questions."
+          "facts": ""
         },
         {
           "number": 45,
@@ -10164,7 +10164,7 @@
           "number": 47,
           "question": "Which temple city in Tamil Nadu is an important center for Shaivism?",
           "answer": "Thanjavur or Chidambaram (choice: Chidambaram for Nataraja)",
-          "facts": "Thanjavur or Chidambaram (choice: Chidambaram for Nataraja) is a notable geographical location in South Indian History."
+          "facts": ""
         },
         {
           "number": 48,
@@ -10205,7 +10205,7 @@
           "number": 3,
           "question": "What shows Walter White in Breaking Bad?",
           "answer": "Chemistry teacher turned criminal",
-          "facts": "This is a comprehensive answer appearing in television & tv shows questions."
+          "facts": ""
         },
         {
           "number": 4,
@@ -10223,7 +10223,7 @@
           "number": 6,
           "question": "In The Office, what city is it set?",
           "answer": "Scranton",
-          "facts": "Scranton is a notable geographical location in Television & TV Shows."
+          "facts": ""
         },
         {
           "number": 7,
@@ -10714,7 +10714,7 @@
           "number": 37,
           "question": "Who directed City of God?",
           "answer": "Fernando Meirelles",
-          "facts": "Fernando Meirelles is a notable geographical location in Movie Directors & Filmmaking."
+          "facts": ""
         },
         {
           "number": 38,
@@ -10786,7 +10786,7 @@
           "number": 49,
           "question": "Who directed Everything Everywhere?",
           "answer": "Daniel Kwan and Daniel Scheinert",
-          "facts": "This is a comprehensive answer appearing in movie directors & filmmaking questions."
+          "facts": ""
         },
         {
           "number": 50,
@@ -11246,7 +11246,7 @@
           "number": 24,
           "question": "What is Quirk?",
           "answer": "Superpower in My Hero Academia",
-          "facts": "This is a comprehensive answer appearing in anime & manga questions."
+          "facts": ""
         },
         {
           "number": 25,
@@ -11294,7 +11294,7 @@
           "number": 32,
           "question": "What is alchemy?",
           "answer": "Science in Fullmetal Alchemist",
-          "facts": "This is a comprehensive answer appearing in anime & manga questions."
+          "facts": ""
         },
         {
           "number": 33,
@@ -11378,7 +11378,7 @@
           "number": 46,
           "question": "What is an Isekai?",
           "answer": "Anime genre about reincarnation",
-          "facts": "This is a comprehensive answer appearing in anime & manga questions."
+          "facts": ""
         },
         {
           "number": 47,

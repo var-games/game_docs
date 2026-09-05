@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAR Games | Indie Game Studio & Mobile Games Portfolio</title>
+  <meta name="description"
+    content="Official developer portfolio of VAR Games. Explore our mobile and web games including Survivor, Where in the World, Odd One Out, Farm Maze, and Trivia Night.">
+  <meta name="keywords"
+    content="VAR Games, Indie Games, Mobile Games, Google Play, Survivor, Where in the World, Odd One Out, Farm Maze, Trivia Night">
+  <meta name="author" content="VAR Games">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="VAR Games | Mobile & Web Games">
+  <meta property="og:description"
+    content="Discover entertaining, family-friendly 3D puzzles, action brawlers, and trivia games by VAR Games on Google Play.">
+  <meta property="og:image" content="assets/brand/var_games_logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/brand/var_games_logo_small.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #0a0d14;
+      --bg-secondary: #0f1523;
+      --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(26, 35, 56, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(99, 102, 241, 0.3);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.4);
+      --accent-cyan: #06b6d4;
+      --accent-pink: #ec4899;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .glow-blob-1 {
+      position: absolute;
+      top: -10%;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(80px);
+      animation: floatSlow 18s ease-in-out infinite alternate;
+    }
+
+    .glow-blob-2 {
+      position: absolute;
+      top: 40%;
+      right: -10%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(80px);
+      animation: floatSlow 22s ease-in-out infinite alternate-reverse;
+    }
+
+    .glow-blob-3 {
+      position: absolute;
+      bottom: -10%;
+      left: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(80px);
+    }
+
+    @keyframes floatSlow {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      100% {
+        transform: translate(60px, 40px) scale(1.1);
+      }
+    }
+
+    /* Layout Containers */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      background: rgba(15, 21, 35, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin: 16px auto 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: var(--transition);
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 18px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+      color: #ffffff;
+    }
+
+    .btn-playstore {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-playstore:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45);
+      color: #ffffff;
+    }
+
+    .btn-insta {
+      background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(221, 42, 123, 0.35);
+    }
+
+    .btn-insta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(221, 42, 123, 0.5);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 40px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge-container {
+      margin-bottom: 20px;
+      display: inline-flex;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      backdrop-filter: blur(8px);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title-gradient {
+      background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 60%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 8px 12px;
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #ffffff;
+      background: linear-gradient(135deg, #fff, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .section-subtitle-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* Filter Controls */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    /* Games Grid */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+
+    /* Game Card */
+    .game-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.15);
+    }
+
+    .game-card-media {
+      position: relative;
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .game-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .game-card:hover .game-card-media img {
+      transform: scale(1.05);
+    }
+
+    .game-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-playstore {
+      background: rgba(16, 185, 129, 0.85);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .badge-web {
+      background: rgba(99, 102, 241, 0.9);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .game-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .game-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .game-icon-small {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .game-title-wrap {
+      flex: 1;
+    }
+
+    .game-title {
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .game-genre {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .game-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+
+    .game-features-list {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .game-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .game-feature-bullet {
+      color: var(--primary);
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .game-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .game-action-primary {
+      width: 100%;
+    }
+
+    .game-action-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .game-action-row .btn {
+      flex: 1;
+    }
+
+    /* Web Game Spotlight Banner */
+    .spotlight-section {
+      margin-bottom: 80px;
+    }
+
+    .spotlight-card {
+      background: linear-gradient(135deg, rgba(30, 27, 75, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .spotlight-content h3 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .spotlight-content p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .spotlight-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .spotlight-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .spotlight-preview-frame {
+      background: #000;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .trivia-badge-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Features Grid (Studio Values) */
+    .values-section {
+      margin-bottom: 80px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(99, 102, 241, 0.12);
+      color: #818cf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .value-title {
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .value-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Instagram Banner */
+    .instagram-section {
+      background: linear-gradient(135deg, rgba(245, 133, 41, 0.1) 0%, rgba(221, 42, 123, 0.15) 50%, rgba(129, 52, 175, 0.1) 100%);
+      border: 1px solid rgba(221, 42, 123, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .instagram-handle {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .instagram-desc {
+      color: #cbd5e1;
+      max-width: 540px;
+      margin: 0 auto 24px;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 48px 32px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .contact-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      margin: 20px auto 28px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .contact-box:hover {
+      border-color: var(--primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .contact-email-text {
+      font-family: monospace;
+      font-size: 1.05rem;
+      color: #a5b4fc;
+      letter-spacing: 0.02em;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      transition: var(--transition);
+    }
+
+    .copy-btn:hover {
+      color: #ffffff;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #07090e;
+      border-top: 1px solid var(--border-color);
+      padding: 48px 0 32px;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 12px;
+      max-width: 360px;
+    }
+
+    .footer-col-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-link-item a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .footer-link-item a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      color: #ffffff;
+      border: 1px solid var(--accent-emerald);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Screenshot Lightbox Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(5, 8, 15, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-container {
+      max-width: 1000px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      color: #ffffff;
+    }
+
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #ffffff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .modal-media-view {
+      position: relative;
+      background: #000;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .modal-media-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      user-select: none;
+    }
+
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(99, 102, 241, 0.8);
+      border-color: rgba(99, 102, 241, 1);
+    }
+
+    .modal-nav-prev {
+      left: 16px;
+    }
+
+    .modal-nav-next {
+      right: 16px;
+    }
+
+    .modal-footer {
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .modal-thumbnails {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      max-width: 70%;
+      padding-bottom: 4px;
+    }
+
+    .modal-thumb {
+      width: 48px;
+      height: 32px;
+      border-radius: 4px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.5;
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    .modal-thumb.active {
+      opacity: 1;
+      border-color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .spotlight-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-media-view {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .modal-media-view {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-blob-1"></div>
+    <div class="glow-blob-2"></div>
+    <div class="glow-blob-3"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-content">
+        <a href="#hero" class="brand-logo-link">
+          <img src="assets/brand/var_games_logo_small.png" alt="VAR Games Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span class="brand-title">VAR Games</span>
+            <span class="brand-tag">Game Studio</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#games" class="nav-link">Mobile Games</a></li>
+          <li><a href="#trivia-web" class="nav-link">Web Games</a></li>
+          <li><a href="#values" class="nav-link">Studio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://play.google.com/store/apps/dev?id=8881202508721348823" target="_blank"
+            rel="noopener noreferrer" class="btn btn-playstore btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+            </svg>
+            Play Store
+          </a>
+          <a href="https://www.instagram.com/var.games/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-insta btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+      <div class="hero-badge-container">
+        <span class="hero-badge">
+          <span class="pulse-dot"></span>
+          Indie Mobile Game Studio &bull; Google Play Developer
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        Immersive Adventures.<br>
+        <span class="hero-title-gradient">Endless Fun for Everyone.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Welcome to <strong>VAR Games</strong>! We build interactive 3D puzzles, survival arena brawlers, and educational
+        cartography challenges designed to be family-safe, responsive, and played anywhere.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="https://play.google.com/store/apps/dev?id=8881202508721348823" target="_blank"
+          rel="noopener noreferrer" class="btn btn-playstore">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+          </svg>
+          Google Play Developer Profile
+        </a>
+        <a href="https://www.instagram.com/var.games/" target="_blank" rel="noopener noreferrer" class="btn btn-insta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+          Instagram @var.games
+        </a>
+        <a href="#trivia-web" class="btn btn-outline">
+          ⚡ Play Web Trivia
+        </a>
+      </div>
+
+      <!-- Stats Ribbon -->
+      <div class="stats-ribbon">
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Published Games</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Offline &amp; Safe</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Ads or Tracking</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">COPPA</span>
+          <span class="stat-label">Family Friendly</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Games Showcase Section -->
+    <main class="games-section" id="games">
+      <div class="section-header">
+        <span class="section-subtitle-tag">Game Library</span>
+        <h2 class="section-title">Explore Our Games</h2>
+        <p class="section-desc">From thrilling city defense to 3D cartography quizzes and procedural farm mazes, pick
+          your next adventure.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Games (5)</button>
+        <button class="filter-btn" data-filter="playstore">Google Play (4)</button>
+        <button class="filter-btn" data-filter="web">Play Online (1)</button>
+        <button class="filter-btn" data-filter="puzzle">Puzzle &amp; Trivia</button>
+        <button class="filter-btn" data-filter="action">Action &amp; 3D</button>
+      </div>
+
+      <!-- Games Grid -->
+      <div class="games-grid" id="gamesGrid">
+
+        <!-- Game 1: Survivor -->
+        <article class="game-card" data-category="playstore action" id="game-survivor">
+          <div class="game-card-media">
+            <img src="assets/games/survivor/feature_graphic.png" alt="Survivor Game Feature Graphic" loading="lazy">
+            <span class="game-badge badge-playstore">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+              </svg>
+              Google Play
+            </span>
+          </div>
+          <div class="game-card-body">
+            <div class="game-header">
+              <img src="assets/games/survivor/Screenshot_1.png" alt="Survivor Icon" class="game-icon-small">
+              <div class="game-title-wrap">
+                <h3 class="game-title">Survivor</h3>
+                <span class="game-genre">2.5D Top-Down Arena Brawler</span>
+              </div>
+            </div>
+            <p class="game-desc">
+              The city is under siege! Defend the city streets from endless skeleton waves. String together powerful
+              punches, devastating kicks, and epic special abilities to smash the undead horde.
+            </p>
+            <ul class="game-features-list">
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Endless dynamic skeleton
+                combat waves</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Fast-paced brawler combos
+                &amp; super abilities</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> 100% offline gameplay with
+                local score saves</li>
+            </ul>
+            <div class="game-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.var.games.survivor" target="_blank"
+                rel="noopener noreferrer" class="btn btn-playstore game-action-primary">
+                Install from Google Play
+              </a>
+              <div class="game-action-row">
+                <button class="btn btn-outline btn-sm" onclick="openGallery('survivor')">
+                  📷 Screenshots
+                </button>
+                <a href="../survivor/privacy_policy.html" class="btn btn-outline btn-sm">
+                  🔒 Privacy Policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 2: Where in the World? -->
+        <article class="game-card" data-category="playstore puzzle action" id="game-where-in-world">
+          <div class="game-card-media">
+            <img src="assets/games/where_in_world/feature_image.png" alt="Where in the World Feature Graphic"
+              loading="lazy">
+            <span class="game-badge badge-playstore">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+              </svg>
+              Google Play
+            </span>
+          </div>
+          <div class="game-card-body">
+            <div class="game-header">
+              <img src="assets/games/where_in_world/game_icon.png" alt="Where in the World Icon"
+                class="game-icon-small">
+              <div class="game-title-wrap">
+                <h3 class="game-title">Where in the World?</h3>
+                <span class="game-genre">3D Globe Cartography &amp; Trivia</span>
+              </div>
+            </div>
+            <p class="game-desc">
+              Embark on a global scavenger hunt! Test your spatial awareness as you navigate a high-fidelity 3D
+              topographical globe to locate countries, bustling cities, and historical monuments.
+            </p>
+            <ul class="game-features-list">
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> High-fidelity 3D
+                interactive Earth globe</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Filter by Countries, Cities
+                &amp; Monuments</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Race the timer &amp; beat
+                high scores</li>
+            </ul>
+            <div class="game-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.var.games.where.in.the.world" target="_blank"
+                rel="noopener noreferrer" class="btn btn-playstore game-action-primary">
+                Install from Google Play
+              </a>
+              <div class="game-action-row">
+                <button class="btn btn-outline btn-sm" onclick="openGallery('where_in_world')">
+                  📷 Screenshots
+                </button>
+                <a href="../where_in_the_world/privacy_policy.html" class="btn btn-outline btn-sm">
+                  🔒 Privacy Policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 3: Odd One Out -->
+        <article class="game-card" data-category="playstore puzzle" id="game-odd-one-out">
+          <div class="game-card-media">
+            <img src="assets/games/odd_one_out/feature_image.jpg" alt="Odd One Out Feature Graphic" loading="lazy">
+            <span class="game-badge badge-playstore">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+              </svg>
+              Google Play
+            </span>
+          </div>
+          <div class="game-card-body">
+            <div class="game-header">
+              <img src="assets/games/odd_one_out/Screenshot_1.png" alt="Odd One Out Icon" class="game-icon-small">
+              <div class="game-title-wrap">
+                <h3 class="game-title">Odd One Out</h3>
+                <span class="game-genre">Visual Puzzle &amp; Observation</span>
+              </div>
+            </div>
+            <p class="game-desc">
+              Test your eagle-eyed observation skills and reaction speed! Spot the single unique item hidden among
+              dozens of similar tiles. Randomly generated levels mean the puzzle excitement never ends.
+            </p>
+            <ul class="game-features-list">
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Endless ramp-up difficulty
+                modes</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Milestone celebrations
+                every 100 points</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Instant high score tracking
+                &amp; sound cues</li>
+            </ul>
+            <div class="game-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.vargames.oddoneout" target="_blank"
+                rel="noopener noreferrer" class="btn btn-playstore game-action-primary">
+                Install from Google Play
+              </a>
+              <div class="game-action-row">
+                <button class="btn btn-outline btn-sm" onclick="openGallery('odd_one_out')">
+                  📷 Screenshots
+                </button>
+                <a href="../odd_one_out/privacy_policy.html" class="btn btn-outline btn-sm">
+                  🔒 Privacy Policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 4: Farm Maze Rescue -->
+        <article class="game-card" data-category="playstore action puzzle" id="game-farm-maze">
+          <div class="game-card-media">
+            <img src="assets/games/farm_maze/feature_image.png" alt="Farm Maze Feature Graphic" loading="lazy">
+            <span class="game-badge badge-playstore">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186c-.378-.396-.61-.954-.61-1.604V3.418c0-.65.232-1.208.61-1.604zM15.207 13.414l2.673 2.673-12.83 7.373 10.157-10.046zM15.207 10.586L5.05 .54l12.83 7.373-2.673 2.673zm1.414 1.414l3.162-1.815c1.082-.62 1.082-1.637 0-2.257L16.62 6.113l-1.414 1.414 1.415 1.414v6.118l-1.415 1.414 1.414 1.545z" />
+              </svg>
+              Google Play
+            </span>
+          </div>
+          <div class="game-card-body">
+            <div class="game-header">
+              <img src="assets/games/farm_maze/PlayStoreIcon.png" alt="Farm Maze Icon" class="game-icon-small">
+              <div class="game-title-wrap">
+                <h3 class="game-title">Farm Maze</h3>
+                <span class="game-genre">3D Procedural Maze Rescue</span>
+              </div>
+            </div>
+            <p class="game-desc">
+              Step into the boots of Nakshathra and explore dynamically generated farm mazes! Race through winding
+              fences, unlock cages, and free adorable farm animals in this vibrant low-poly adventure.
+            </p>
+            <ul class="game-features-list">
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Procedural mazes — never
+                run the same farm twice</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Dynamic zoom &amp;
+                bird's-eye camera angles</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Fun victory dance emotes
+                &amp; confetti parties</li>
+            </ul>
+            <div class="game-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.var.games.farm.maze" target="_blank"
+                rel="noopener noreferrer" class="btn btn-playstore game-action-primary">
+                Install from Google Play
+              </a>
+              <div class="game-action-row">
+                <button class="btn btn-outline btn-sm" onclick="openGallery('farm_maze')">
+                  📷 Screenshots
+                </button>
+                <a href="../farm_maze/privacy_policy.html" class="btn btn-outline btn-sm">
+                  🔒 Privacy Policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 5: Trivia Night (Web Game) -->
+        <article class="game-card" data-category="web puzzle" id="game-trivia-night">
+          <div class="game-card-media"
+            style="background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center; color: white;">
+              <span
+                style="font-size: 3.5rem; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">🎉</span>
+              <span
+                style="font-family: 'Outfit'; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: #ffd43b;">Trivia
+                Night</span>
+            </div>
+            <span class="game-badge badge-web">
+              ⚡ Web Edition
+            </span>
+          </div>
+          <div class="game-card-body">
+            <div class="game-header">
+              <div class="game-icon-small"
+                style="background: #6366f1; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                🧠
+              </div>
+              <div class="game-title-wrap">
+                <h3 class="game-title">Trivia Night</h3>
+                <span class="game-genre">Interactive Web Quiz Show</span>
+              </div>
+            </div>
+            <p class="game-desc">
+              Play directly in your browser without any install! Put your general knowledge, science, pop culture, and
+              history smarts to the test with real-time scoring and fun category selections.
+            </p>
+            <ul class="game-features-list">
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Instant play directly on
+                web &amp; mobile browsers</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Broad question bank across
+                diverse categories</li>
+              <li class="game-feature-item"><span class="game-feature-bullet">&#9670;</span> Built-in timer, streak
+                score &amp; victory podium</li>
+            </ul>
+            <div class="game-actions">
+              <a href="../trivia_night/trivia_game.html" class="btn btn-primary game-action-primary">
+                ⚡ Play Trivia Night Now
+              </a>
+              <div class="game-action-row">
+                <a href="../trivia_night/trivia_game.html" class="btn btn-outline btn-sm">
+                  🚀 Launch Game
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Web Play Spotlight Section -->
+    <section class="spotlight-section" id="trivia-web">
+      <div class="spotlight-card">
+        <div class="spotlight-content">
+          <span class="section-subtitle-tag" style="color: #a5b4fc;">Browser Playable</span>
+          <h3>Instant Fun: Trivia Night</h3>
+          <p>
+            No downloads or app store installs needed. Launch Trivia Night right now in your web browser and challenge
+            yourself or friends to a trivia showdown.
+          </p>
+          <div class="spotlight-features">
+            <div class="spotlight-pill"><span>🎯</span> Multiple Categories</div>
+            <div class="spotlight-pill"><span>⏱️</span> Timed Challenges</div>
+            <div class="spotlight-pill"><span>📱</span> Mobile &amp; Desktop</div>
+            <div class="spotlight-pill"><span>💯</span> 100% Free to Play</div>
+          </div>
+          <a href="../trivia_night/trivia_game.html" class="btn btn-primary" style="font-size: 1rem; padding: 12px 28px;">
+            🎉 Launch Trivia Game
+          </a>
+        </div>
+
+        <div class="spotlight-preview-frame">
+          <div class="trivia-badge-icon">❓</div>
+          <h4 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Trivia Night Online</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Ready to test your knowledge? Click below to start your round!
+          </p>
+          <a href="../trivia_night/trivia_game.html" class="btn btn-playstore btn-sm" style="width: 100%;">
+            Start Playing
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Values Section -->
+    <section class="values-section" id="values">
+      <div class="section-header">
+        <span class="section-subtitle-tag">Our Studio Principles</span>
+        <h2 class="section-title">Why VAR Games</h2>
+        <p class="section-desc">We build games focused on player enjoyment, seamless offline performance, and complete
+          data safety.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h3 class="value-title">Zero Tracking &amp; COPPA Safe</h3>
+          <p class="value-desc">
+            We don't collect, sell, or harvest your personal information. Our games are safe for children and players of
+            all ages.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3 class="value-title">100% Offline-First</h3>
+          <p class="value-desc">
+            Your progress, high scores, and settings are saved securely on your device. Play on flights, commutes, or
+            off the grid.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🧩</div>
+          <h3 class="value-title">Procedural &amp; Unique</h3>
+          <p class="value-desc">
+            From procedural mazes in Farm Maze to randomized items in Odd One Out, every single session feels fresh and
+            rewarding.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🎨</div>
+          <h3 class="value-title">Crafted with Passion</h3>
+          <p class="value-desc">
+            Crafted with modern Unity technologies, optimized controls, and dynamic camera perspectives tailored for
+            mobile screens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram & Community Section -->
+    <section class="instagram-section">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <span class="section-subtitle-tag" style="color: #f43f5e;">Community &amp; Updates</span>
+        <h2 class="section-title">Follow Us On Instagram</h2>
+      </div>
+      <div class="instagram-handle">@var.games</div>
+      <p class="instagram-desc">
+        Catch sneak peeks of upcoming game updates, character animations, new level releases, and behind-the-scenes game
+        development!
+      </p>
+      <a href="https://www.instagram.com/var.games/" target="_blank" rel="noopener noreferrer" class="btn btn-insta"
+        style="padding: 12px 28px; font-size: 1rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+        Follow @var.games on Instagram
+      </a>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section class="contact-section" id="contact">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <span class="section-subtitle-tag">Get in Touch</span>
+        <h2 class="section-title">Developer Support &amp; Inquiries</h2>
+        <p class="section-desc">
+          Have feedback, game ideas, or need support? Drop us a line anytime.
+        </p>
+      </div>
+
+      <div class="contact-box" onclick="copyEmail()" title="Click to copy email address">
+        <span>✉️</span>
+        <span class="contact-email-text" id="emailAddress">var.mobile.games@gmail.com</span>
+        <button class="copy-btn" aria-label="Copy email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div>
+        <a href="mailto:var.mobile.games@gmail.com" class="btn btn-primary">
+          Send an Email
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="page-wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo-link" style="margin-bottom: 8px;">
+            <img src="assets/brand/var_games_logo_small.png" alt="VAR Games" class="brand-logo-img">
+            <span class="brand-title">VAR Games</span>
+          </div>
+          <p>
+            An independent game studio creating fun, interactive 3D and puzzle games designed for all ages.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Google Play Games</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="https://play.google.com/store/apps/details?id=com.var.games.survivor"
+                target="_blank" rel="noopener noreferrer">Survivor</a></li>
+            <li class="footer-link-item"><a
+                href="https://play.google.com/store/apps/details?id=com.var.games.where.in.the.world" target="_blank"
+                rel="noopener noreferrer">Where in the World?</a></li>
+            <li class="footer-link-item"><a href="https://play.google.com/store/apps/details?id=com.vargames.oddoneout"
+                target="_blank" rel="noopener noreferrer">Odd One Out</a></li>
+            <li class="footer-link-item"><a href="https://play.google.com/store/apps/details?id=com.var.games.farm.maze"
+                target="_blank" rel="noopener noreferrer">Farm Maze</a></li>
+            <li class="footer-link-item"><a href="../trivia_night/trivia_game.html">Trivia Night (Web)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Privacy Policies</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="../survivor/privacy_policy.html">Survivor Privacy</a></li>
+            <li class="footer-link-item"><a href="../where_in_the_world/privacy_policy.html">Where in the World Privacy</a>
+            </li>
+            <li class="footer-link-item"><a href="../odd_one_out/privacy_policy.html">Odd One Out Privacy</a></li>
+            <li class="footer-link-item"><a href="../farm_maze/privacy_policy.html">Farm Maze Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VAR Games. All rights reserved.</div>
+        <div>Developer Email: <a href="mailto:var.mobile.games@gmail.com"
+            style="color: #94a3b8;">var.mobile.games@gmail.com</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span>✅</span>
+    <span id="toastMsg">Email copied to clipboard!</span>
+  </div>
+
+  <!-- Screenshot Gallery Lightbox Modal -->
+  <div class="modal-overlay" id="galleryModal" onclick="handleModalClick(event)">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalGameTitle">Game Screenshots</h3>
+        <button class="modal-close-btn" onclick="closeGallery()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-media-view">
+        <button class="modal-nav-btn modal-nav-prev" onclick="navGallery(-1)"
+          aria-label="Previous image">&#10094;</button>
+        <img src="" alt="Screenshot Preview" class="modal-media-img" id="modalActiveImg">
+        <button class="modal-nav-btn modal-nav-next" onclick="navGallery(1)" aria-label="Next image">&#10095;</button>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-thumbnails" id="modalThumbnails"></div>
+        <div id="modalCounter">1 / 4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Gallery Data
+    const gameGalleries = {
+      survivor: {
+        title: "Survivor - In-Game Screenshots",
+        images: [
+          "assets/games/survivor/Screenshot_1.png",
+          "assets/games/survivor/Screenshot_2.png",
+          "assets/games/survivor/Screenshot_3.png",
+          "assets/games/survivor/Screenshot_4.png",
+          "assets/games/survivor/Screenshot_5.png",
+          "assets/games/survivor/Screenshot_6.png",
+          "assets/games/survivor/Screenshot_7.png",
+          "assets/games/survivor/Screenshot_8.png"
+        ]
+      },
+      where_in_world: {
+        title: "Where in the World? - In-Game Screenshots",
+        images: [
+          "assets/games/where_in_world/Screenshot_20260803-093009.png",
+          "assets/games/where_in_world/Screenshot_20260803-093028.png",
+          "assets/games/where_in_world/Screenshot_20260803-093045.png",
+          "assets/games/where_in_world/Screenshot_20260803-093103.png",
+          "assets/games/where_in_world/Screenshot_20260803-093137.png",
+          "assets/games/where_in_world/Screenshot_20260803-093205.png"
+        ]
+      },
+      odd_one_out: {
+        title: "Odd One Out - In-Game Screenshots",
+        images: [
+          "assets/games/odd_one_out/Screenshot_1.png",
+          "assets/games/odd_one_out/Screenshot_2.png",
+          "assets/games/odd_one_out/Screenshot_3.png",
+          "assets/games/odd_one_out/Screenshot_4.png",
+          "assets/games/odd_one_out/Screenshot_5.png",
+          "assets/games/odd_one_out/Screenshot_6.png",
+          "assets/games/odd_one_out/Screenshot_7.png"
+        ]
+      },
+      farm_maze: {
+        title: "Farm Maze - In-Game Screenshots",
+        images: [
+          "assets/games/farm_maze/Screenshot_1.png",
+          "assets/games/farm_maze/Screenshot_2.png",
+          "assets/games/farm_maze/Screenshot_3.png",
+          "assets/games/farm_maze/Screenshot_4.png",
+          "assets/games/farm_maze/Screenshot_5.png",
+          "assets/games/farm_maze/Screenshot_6.png",
+          "assets/games/farm_maze/Screenshot_7.png"
+        ]
+      }
+    };
+
+    let activeGameKey = null;
+    let activeIndex = 0;
+
+    function openGallery(gameKey) {
+      if (!gameGalleries[gameKey]) return;
+      activeGameKey = gameKey;
+      activeIndex = 0;
+
+      const gallery = gameGalleries[gameKey];
+      document.getElementById('modalGameTitle').textContent = gallery.title;
+      renderActiveImage();
+      renderThumbnails();
+
+      const modal = document.getElementById('galleryModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+      const modal = document.getElementById('galleryModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      activeGameKey = null;
+    }
+
+    function handleModalClick(e) {
+      if (e.target.id === 'galleryModal') {
+        closeGallery();
+      }
+    }
+
+    function renderActiveImage() {
+      if (!activeGameKey) return;
+      const gallery = gameGalleries[activeGameKey];
+      const imgEl = document.getElementById('modalActiveImg');
+      imgEl.src = gallery.images[activeIndex];
+      document.getElementById('modalCounter').textContent = `${activeIndex + 1} / ${gallery.images.length}`;
+
+      // Update active thumbnail
+      const thumbs = document.querySelectorAll('.modal-thumb');
+      thumbs.forEach((t, i) => {
+        if (i === activeIndex) t.classList.add('active');
+        else t.classList.remove('active');
+      });
+    }
+
+    function renderThumbnails() {
+      if (!activeGameKey) return;
+      const gallery = gameGalleries[activeGameKey];
+      const thumbsContainer = document.getElementById('modalThumbnails');
+      thumbsContainer.innerHTML = '';
+
+      gallery.images.forEach((imgSrc, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = imgSrc;
+        thumb.alt = `Thumbnail ${idx + 1}`;
+        thumb.className = `modal-thumb ${idx === activeIndex ? 'active' : ''}`;
+        thumb.onclick = () => {
+          activeIndex = idx;
+          renderActiveImage();
+        };
+        thumbsContainer.appendChild(thumb);
+      });
+    }
+
+    function navGallery(step) {
+      if (!activeGameKey) return;
+      const gallery = gameGalleries[activeGameKey];
+      activeIndex = (activeIndex + step + gallery.images.length) % gallery.images.length;
+      renderActiveImage();
+    }
+
+    // Keyboard support for Gallery
+    window.addEventListener('keydown', (e) => {
+      if (!activeGameKey) return;
+      if (e.key === 'Escape') closeGallery();
+      if (e.key === 'ArrowLeft') navGallery(-1);
+      if (e.key === 'ArrowRight') navGallery(1);
+    });
+
+    // Copy Email to clipboard
+    function copyEmail() {
+      const email = 'var.mobile.games@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Email copied to clipboard: ' + email);
+      }).catch(() => {
+        showToast('var.mobile.games@gmail.com');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Filter Functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        gameCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'flex';
+          } else {
+            const categories = card.getAttribute('data-category').split(' ');
+            if (categories.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
